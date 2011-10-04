@@ -1,0 +1,40 @@
+body {
+	font: 13px/18px 'Helvetica Neue', Arial, Sans-Serif;
+	color: #000;
+	background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 { font: normal 18px 'PT Sans', 'Helvetica Neue', arial, sans-serif; line-height: 1.3em; margin-bottom: 0.3em; color: #000; }
+h2 { font-size: 22px; margin-bottom: 20px; }
+h2 span { color: #359e07; }
+h3 { font-size: 18px; }
+
+a { color: #0073a5; }
+a:hover{ color:#1cacea; border-color:#1cacea !important;}
+#content .content a:visited{ color:#324a65; }
+#content .content a:active{background:#e6f8ff;}
+
+#sidebar .block a:active{background:#e6f8ff;}
+.topic .info li.username a:active{background:#e6f8ff;}
+#nav-inner .profile .username:active{background:#e6f8ff;}
+.user-profile-table a:active{background:#e6f8ff;}
+
+.block .cloud li a:active{background:#e6f8ff;}
+.topic-name-href:active{background:#e6f8ff;}
+.comment .info li.username a:active{background:#e6f8ff;}
+.table.table-people tr td:first-child a:active{background:#e6f8ff;}
+
+#footer a:active{background:#e6f8ff;}
+
+a.dashed { text-decoration: none; border-bottom: 1px dashed #70AAE0; }
+
+p { margin-bottom: 18px; }
+
+
+/*#content-inner h2{font-family:'PT Sans', 'helvetica neue', arial, sans-serif; font-size:38px; line-height:35px; font-weight:bold; margin-bottom: 20px;}*/
+h1.page-title{font-family:'PT Sans', 'helvetica neue', arial, sans-serif; font-size:38px; line-height:35px; font-weight:bold; margin-bottom: 20px;}
+h2.stream-header{font-family:'PT Sans', 'helvetica neue', arial, sans-serif; font-size:38px; line-height:35px; font-weight:bold; margin-bottom: 20px;}
+h1.page-title span{vertical-align:top; position:relative; color: #359e07;}
+h1.page-title .sup{font-size:20px; top:-10px;}
+h1.page-title .search-request{font-size:38px; vertical-align:top; position:relative; top:0; color: #7f7f7f;}
+

@@ -1,0 +1,54 @@
+body{}
+.join:hover{
+	background:url(../images/gray-btn-spr.png) 0 0 repeat-x;
+	filter: none !important;
+	}
+#nav-inner .auth .login-link{
+	background:url(../images/green-btn-spr.png) 0 0 repeat-x;
+	height:21px;
+	filter: none !important;
+	outline:none;
+	}
+#nav-inner .auth .registration-link{
+	background:#6e7d86 url(../images/reg-gr.png) 0 0 repeat-x;
+	}
+#nav-inner .auth .login-link:hover{
+	background-position:0 -21px;
+	filter: none !important;
+	}
+#nav-inner .auth .login-link:active{
+	background-position:0 -42px;
+	filter: none !important;
+	}
+*+ html .button{height:21px; line-height:21px; padding:0px;}
+*+ html .button.big-button{height:29px; line-height:29px; padding:0px;}
+*+ html .green-button{height:21px; line-height:21px; padding:0px;}
+.button, .button:hover, .green-button, .green-button:hover{
+	filter: none !important; 
+	}
+#nav .button-publish, .button, .green-button{
+	filter: none !important;
+	background:url(../images/green-btn-spr.png) 0 0 repeat-x;
+	outline:none;
+	}
+#nav .button-publish:hover, .button:hover, .green-button:hover{
+	filter: none !important;
+	background-position:0 -21px !important;
+	}
+#nav .button-publish:active, .button:active, .green-button:active{
+	filter: none !important;
+	background-position:0 -42px !important;
+	}
+#nav .menu li.active a{
+	background:#0C82C9 url(../images/blue-gr.png) 0 0 repeat-x;
+	}
+	
+.button.big-button{
+	background:#18b210 url(../images/big-green-btn.png) 0 0 repeat-x;
+	}
+.button.big-button:hover{
+	background-position:0 -30px !important;
+	}
+.button.big-button:active{
+	background-position:0 -60px !important;
+	}
