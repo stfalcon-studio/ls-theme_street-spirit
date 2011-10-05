@@ -169,6 +169,7 @@
 .table.table-talk a.favourite { float: left; width: 10px; height: 8px; background: url(../images/icons.gif) -40px -40px no-repeat; }
 .table.table-talk a.favourite.active { background-position: -50px -40px; }
 .table.table-talk a.favourite:hover { background-position: -50px -40px; }
+.table.table-people.table-talk { margin-top: 0; }
 
 .right { float: right; }
 span.green { color: #008000; }
