@@ -149,7 +149,7 @@
 .table tr:first-child td {  font-weight: bold; font-size:13px; border-top:none; padding-top:0px;}
 .table td { padding: 5px; border-top: 1px solid #ddd;  font-size: 11px; }
 
-.table.table-people { margin-top: -12px; }
+/*.table.table-people { margin-top: -12px; }*/
 .table.table-people .thead td{padding-top:0px; padding-bottom: 11px; }
 .table.table-people .avatar { vertical-align: middle; margin-right: 13px; }
 .table.table-people td { padding: 8px 10px; vertical-align: middle; }

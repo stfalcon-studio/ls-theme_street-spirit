@@ -326,22 +326,22 @@ not all and (-webkit-min-device-pixel-ratio:0) {
 #profile_actions li{display:inline-block; margin-right:5px;}
 *+html #profile_actions li {display:inline; zoom:1}
 
-#profile_actions a .mail-ico{display:inline-block; width:16px; height:12px; background:url(../images/mail-ico.png) 0 0 no-repeat; position:relative; top:3px; margin-right:6px;}
+#profile_actions a .mail-ico{display:inline-block; width:16px; height:12px; background:url(../images/mail-ico.png) 0 0 no-repeat; position:relative; top:-1px; margin-right:6px; vertical-align:middle;}
 *+ html #profile_actions a .mail-ico{display:inline; zoom:1;}
-#profile_actions a .add-ico{display:inline-block; width:9px; height:9px; background:url(../images/add-ico.png) 0 0 no-repeat; margin-right:6px; position: relative; top: 5px;}
+#profile_actions a .add-ico{display:inline-block; width:9px; height:9px; background:url(../images/add-ico.png) 0 0 no-repeat; margin-right:6px; position: relative; top: -1px; vertical-align:middle;}
 *+ html #profile_actions a .add-ico{display:inline; zoom:1;}
 
 #profile_actions li {
         font-size:14px;
         background:#d9d9d9;
-        padding:3px 9px 3px 9px;
+        padding:2px 9px 2px 9px;
     	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e1e1e1', endColorstr='#cbcbcb');
-	background: -webkit-gradient(linear, left top, left bottom, from(#e1e1e1), to(#cbcbcb));
-	background: -moz-linear-gradient(top,  #e1e1e1,  #cbcbcb);
-	background: -o-linear-gradient(top, #e1e1e1, #cbcbcb); /* Opera11.10+ */
-	background: -ms-linear-gradient(top, #e1e1e1, #cbcbcb); /* IE10+ */
-	background: linear-gradient(top, #e1e1e1, #cbcbcb); /* W3C */
-	border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
+		background: -webkit-gradient(linear, left top, left bottom, from(#e1e1e1), to(#cbcbcb));
+		background: -moz-linear-gradient(top,  #e1e1e1,  #cbcbcb);
+		background: -o-linear-gradient(top, #e1e1e1, #cbcbcb); /* Opera11.10+ */
+		background: -ms-linear-gradient(top, #e1e1e1, #cbcbcb); /* IE10+ */
+		background: linear-gradient(top, #e1e1e1, #cbcbcb); /* W3C */
+		border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
         text-shadow:0px 1px 0px #fff;
 }
 #profile_actions li a{
