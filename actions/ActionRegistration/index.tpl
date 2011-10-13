@@ -5,7 +5,7 @@
 
 	<form action="{router page='registration'}" method="post">
 		<div class="center">
-		<h2 class="form-header">{$aLang.registration} <a href="#"><span class="openid-ico"></span>Войти, используя OpenID</a></h2>
+		<h2 class="form-header">{$aLang.registration}</h2>
 
 		{hook run='form_registration_begin'}
 
