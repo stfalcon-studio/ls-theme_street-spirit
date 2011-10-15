@@ -1,36 +1,36 @@
 <?php
 
 /**
- * Русский языковой файл.
+ * Український мовний файл.
  * Содержит все текстовки движка.
  */
 return array(
-    'exit' => 'Выход',
-    'settings_menu_tuning' => 'Настройки сайта',
-    'menu_section' => 'Разделы',
-    'search_keyword_text' => 'поиск по сайту',
+    'exit' => 'Вихід',
+    'settings_menu_tuning' => 'Налаштування сайту',
+    'menu_section' => 'Розділи',
+    'search_keyword_text' => 'пошук по сайту',
     // Blog
-    'blog_join_now' => 'Вступить в блог',
-    'blog_leave_now' => 'Покинуть блог',
-    'blog_menu_all_good' => 'Интересные',
-    'blog_menu_collective_good' => 'Интересные',
-    'blog_menu_collective_bad' => 'Не интересные',
-    'blog_menu_personal_good' => 'Интересные',
-    'blog_menu_personal_bad' => 'Не интересные',
+    'blog_join_now' => 'Вступити в блог',
+    'blog_leave_now' => 'Покинути блог',
+    'blog_menu_all_good' => 'Цікаві',
+    'blog_menu_collective_good' => 'Цікаві',
+    'blog_menu_collective_bad' => 'Не цікаві',
+    'blog_menu_personal_good' => 'Цікаві',
+    'blog_menu_personal_bad' => 'Не цікаві',
     // Comments
-    'comment_add' => 'отправить',
-    'comment_preview' => 'предварительный просмотр',
+    'comment_add' => 'відправити',
+    'comment_preview' => 'попередній перегляд',
     // Copyright
-    'text_skin_made_in' => 'Дизайн сделали в',
+    'text_skin_made_in' => 'Дизайн виготовлено в',
     // Topic
-    'topic_create' => 'Написать',
+    'topic_create' => 'Написати',
     'topic_rating' => 'рейтинг',
-    'topic_vote_plus' => 'это интересно',
-    'topic_vote_minus' => 'не интересно',
-    'topic_comment_add' => 'Прокомментировать',
+    'topic_vote_plus' => 'цікаво',
+    'topic_vote_minus' => 'нецікаво',
+    'topic_comment_add' => 'Прокоментувати',
     // User
-    'user_authorization' => 'Войти',
-    'user_registration' => 'Зарегистрироваться',
-    'user_menu_profile_whois' => 'Пользователь',
+    'user_authorization' => 'Ввійти',
+    'user_registration' => 'Зареєструватися',
+    'user_menu_profile_whois' => 'Користувач',
 );
 ?>
