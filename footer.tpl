@@ -11,7 +11,7 @@
 		<div id="footer-inner">
 			<div class="right">
 				&copy; Powered by <a href="http://livestreetcms.ru">LiveStreet CMS</a>
-				<div class="studio">{$aLang.text_skin_made_in}<a href="http://stfalcon.com/">stfalcon.com</a></div>
+				<div class="studio">{$aLang.text_skin_made_in}<a href="http://stfalcon.com/"><img src="{cfg name='path.static.skin'}/images/studio-logo.png" alt="stfalcon.com"/></a></div>
 			</div>
 
 			<div class="left">
