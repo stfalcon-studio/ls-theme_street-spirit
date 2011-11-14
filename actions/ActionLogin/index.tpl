@@ -28,11 +28,11 @@
 	{if $oConfig->GetValue('general.reg.invite')}
 		<br />
 		<form action="{router page='registration'}invite/" method="post">
-			<h2 class="form-header">{$aLang.registration_invite}</h2>
+			<h3 class="form-header">{$aLang.registration_invite}</h3>
 
 			<p><label>{$aLang.registration_invite_code}<br />
-			<input type="text" tabindex="1" name="invite_code" /></label></p>
-			<input type="submit" tabindex="2" name="submit_invite" value="{$aLang.registration_invite_check}" />
+			<input type="text" tabindex="4" name="invite_code" class="input-text"/></label></p>
+			<input type="submit" tabindex="5" name="submit_invite" value="{$aLang.registration_invite_check}" class="button button-login" />
 		</form>
 	{/if}
 </div>
