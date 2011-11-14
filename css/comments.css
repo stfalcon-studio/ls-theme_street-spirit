@@ -108,7 +108,7 @@
 */
 
 /* Content */
-.comment .content { color: #000; margin:0;  position: relative; zoom: 1; font-size:15px;}
+.comment .content { color: #000; margin:0;  position: relative; zoom: 1; font-size:15px; overflow: hidden;}
 .comment pre, .comment-preview pre { overflow: auto; width: 95%; padding: 5px 2%; margin-bottom: 10px; background: #f8f8f8 url(../images/code.gif); border: 1px solid #dce6f0; clear: both; }
 .comment blockquote, .comment-preview blockquote {font-style: italic; padding: 5px 10px; background: #ffffff; border: 1px solid #ddd;}
 
