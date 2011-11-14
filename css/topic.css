@@ -184,6 +184,3 @@ a.title-topic:hover { color: #425662 !important; }
 }
 #photoset-upload-form p { margin-bottom: 10px; }
 #photoset-upload-form .input-text { width: 262px; border: 1px solid #ccc; margin: 0; padding: 3px; font-family: Arial, sans-serif; font-size: 12px; }
-
-/** Скрытие кнопок соц. сетей **/
-.topic .info li.soc-links{display: none;}

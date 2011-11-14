@@ -59,11 +59,7 @@
 
     <ul class="info">
         {if !$bTopicList}
-        <li class="soc-links">
-            <a href="#" class="fb"></a>
-            <a href="#" class="vk"></a>
-            <a href="#" class="tw"></a>
-        </li>
+            {include file='block.addthis.tpl'}
         {/if}
         <li class="username">
             <a href="{$oUser->getUserWebPath()}"><img src="{$oUser->getProfileAvatarPath(24)}" alt="{$oUser->getLogin()}" class="avatar" /></a>
