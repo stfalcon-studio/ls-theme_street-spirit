@@ -3,7 +3,7 @@
 
 
 
-	<form action="{router page='registration'}" method="post">
+	<form class="registration_form" action="{router page='registration'}" method="post">
 		<div class="center">
 		<h2 class="form-header">{$aLang.registration}</h2>
 
