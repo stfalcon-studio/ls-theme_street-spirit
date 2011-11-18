@@ -54,7 +54,6 @@
 	</script>
 
 	{hook run='html_head_end'}
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css' />
 </head>
 
 
