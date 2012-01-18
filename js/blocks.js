@@ -34,6 +34,10 @@ ls.blocks = (function ($) {
 	*/
 	this.load = function(obj, block, params){
 		var id = $(obj).attr('id');
+		'*loadBefore*'; '*/loadBefore*';
+		
+		if(!id) return;
+		
 		params=$.extend(true,{},this.options.type[id].params || {},params || {});
 		
 		var content = $('#'+block+'_content');
@@ -69,6 +73,7 @@ ls.blocks = (function ($) {
             } else if (obj.id == 'block_stream_item_comment') {
                 $('.rss').attr('href', '/rss/allcomments/');
             }
+			ls.hook.run('ls_block_onload_html_after',[content,id,result],this);
 		}
 	};
 

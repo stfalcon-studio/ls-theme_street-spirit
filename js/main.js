@@ -4,6 +4,22 @@ Function.prototype.bind = function(context) {
 		return fn.apply(context, arguments);
 	};
 };
+String.prototype.tr = function(a,p) {
+	var k;
+	var p = typeof(p)=='string' ? p : '';
+	var s = this;
+	for(k in a){
+		var tk = p?p.split('/'):[];
+		tk[tk.length] = k;
+		var tp = tk.join('/');
+		if(typeof(a[k])=='object'){
+			s = s.tr(a[k],tp);
+		}else{
+			s = s.replace((new RegExp('%%'+tp+'%%', 'g')), a[k]);
+		};
+	};
+	return s;
+};
 
 
 var ls = ls || {};
@@ -61,9 +77,7 @@ ls.lang = (function ($) {
 		if (this.msgs[name]) {
 			var value=this.msgs[name];
 			if (replace) {
-				$.each(replace,function(k,v){
-					value=value.replace(new RegExp('%%'+k+'%%','g'),v);
-				});
+				value = value.tr(replace);
 			}
 			return value;
 		}
@@ -89,7 +103,7 @@ ls.swfupload = (function ($) {
 			post_params: {'SSID':SESSION_ID, 'security_ls_key': LIVESTREET_SECURITY_KEY},
 
 			// File Upload Settings
-			file_types : "*.jpg; *.JPG;*.png;*.gif",
+			file_types : "*.jpg;*.jpe;*.jpeg;*.png;*.gif;*.JPG;*.JPE;*.JPEG;*.PNG;*.GIF",
 			file_types_description : "Images",
 			file_upload_limit : "0",
 
@@ -125,15 +139,51 @@ ls.swfupload = (function ($) {
 	}
 
 	this.loadSwf = function() {
-		$.getScript(DIR_ROOT_ENGINE_LIB+'/external/swfupload/swfupload.swfobject.js',function(){
-
-		}.bind(this));
-
-		$.getScript(DIR_ROOT_ENGINE_LIB+'/external/swfupload/swfupload.js',function(){
+		var f = {};
+		
+		f.onSwfobject = function(){
+			if(window.swfobject && swfobject.swfupload){
+				f.onSwfobjectSwfupload();
+			}else{
+				ls.debug('window.swfobject && swfobject.swfupload is undefined, load swfobject/plugin/swfupload.js');
+				$.getScript(
+					DIR_ROOT_ENGINE_LIB+'/external/swfobject/plugin/swfupload.js',
+					f.onSwfobjectSwfupload
+				);
+			}
+		}.bind(this);
+		
+		f.onSwfobjectSwfupload = function(){
+			if(window.SWFUpload){
+				f.onSwfupload();
+			}else{
+				ls.debug('window.SWFUpload is undefined, load swfupload/swfupload.js');
+				$.getScript(
+					DIR_ROOT_ENGINE_LIB+'/external/swfupload/swfupload.js',
+					f.onSwfupload
+				);
+			}
+		}.bind(this);
+		
+		f.onSwfupload = function(){
 			this.initOptions();
 			$(this).trigger('load');
-		}.bind(this));
-	}
+		}.bind(this);
+		
+		
+		(function(){
+			if(window.swfobject){
+				f.onSwfobject();
+			}else{
+				ls.debug('window.swfobject is undefined, load swfobject/swfobject.js');
+				$.getScript(
+					DIR_ROOT_ENGINE_LIB+'/external/swfobject/swfobject.js',
+					f.onSwfobject
+				);
+			}
+		}.bind(this))();
+	};
+	
 
 	this.init = function(opt) {
 		if (opt) {
@@ -210,18 +260,23 @@ ls.tools = (function ($) {
 	*/
 	this.textPreview = function(textId, save, divPreview) {
 		var text =(BLOG_USE_TINYMCE) ? tinyMCE.activeEditor.getContent()  : $('#'+textId).val();
-		ls.ajax(aRouter['ajax']+'preview/text/', {text: text, save: save}, function(result){
+		var ajaxUrl = aRouter['ajax']+'preview/text/';
+		var ajaxOptions = {text: text, save: save};
+		'*textPreviewAjaxBefore*'; '*/textPreviewAjaxBefore*';
+		ls.ajax(ajaxUrl, ajaxOptions, function(result){
 			if (!result) {
 				ls.msg.error('Error','Please try again later');
 			}
 			if (result.bStateError) {
-				ls.msg.error('Error','Please try again later');
+				ls.msg.error(result.sMsgTitle||'Error',result.sMsg||'Please try again later');
 			} else {
 				if (!divPreview) {
 					divPreview = 'text_preview';
 				}
+				'*textPreviewDisplayBefore*'; '*/textPreviewDisplayBefore*';
 				if ($('#'+divPreview).length) {
 					$.scrollTo($('#'+divPreview).html(result.sText));
+					'*textPreviewDisplayAfter*'; '*/textPreviewDisplayAfter*';
 				}
 			}
 		});
@@ -267,7 +322,7 @@ ls = (function ($) {
 			url=aRouter['ajax']+url+'/';
 		}
 
-		$.ajax({
+		var ajaxOptions = {
 			type: more.type || "POST",
 			url: url,
 			data: params,
@@ -284,8 +339,11 @@ ls = (function ($) {
 				ls.debug("base complete: ");
 				ls.debug(msg);
 			}.bind(this)
-		});
+		};
+		
+		ls.hook.run('ls_ajax_before', [ajaxOptions], this);
 
+		return $.ajax(ajaxOptions);
 	};
 
 	/**
@@ -316,6 +374,8 @@ ls = (function ($) {
 
 		}
 
+		ls.hook.run('ls_ajaxsubmit_before', [options], this);
+		
 		form.ajaxSubmit(options);
 	}
 
@@ -323,6 +383,7 @@ ls = (function ($) {
 	* Загрузка изображения
 	*/
 	this.ajaxUploadImg = function(form, sToLoad) {
+		'*ajaxUploadImgBefore*'; '*/ajaxUploadImgBefore*';
 		ls.ajaxSubmit('upload/image/',form,function(data){
 			if (data.bStateError) {
 				ls.msg.error(data.sMsgTitle,data.sMsg);
@@ -330,6 +391,7 @@ ls = (function ($) {
 				$.markItUp({replaceWith: data.sText} );
 				$('#form_upload_img').find('input[type="text"], input[type="file"]').val('');
 				$('#form_upload_img').jqmHide();
+				'*ajaxUploadImgAfter*'; '*/ajaxUploadImgAfter*';
 			}
 		});
 	}
@@ -337,18 +399,18 @@ ls = (function ($) {
 	/**
 	* Дебаг сообщений
 	*/
-	this.debug = function(msg) {
+	this.debug = function() {
 		if (this.options.debug) {
-			this.log(msg);
+			this.log.apply(this,arguments);
 		}
 	}
 
 	/**
 	* Лог сообщений
 	*/
-	this.log = function(msg) {
+	this.log = function() {
 		if (window.console && window.console.log) {
-			console.log(msg);
+			Function.prototype.bind.call(console.log, console).apply(console, arguments);
 		} else {
 			//alert(msg);
 		}
@@ -427,6 +489,9 @@ ls.autocomplete = (function ($) {
 
 
 jQuery(document).ready(function($){
+	// Хук начала инициализации javascript-составляющих шаблона
+	ls.hook.run('ls_template_init_start',[],window);
+	 
 	// Всплывающие окна
 	$('#login_form').jqm({trigger: 'a.login_form_show'});
 	$('#blog_delete_form').jqm({trigger: '#blog_delete_show'});
@@ -480,4 +545,7 @@ jQuery(document).ready(function($){
 		$(".switcher li:first-child").addClass("first-child");
 		$(".switcher li:last-child").addClass("last-child");
 	}
+	
+	// Хук конца инициализации javascript-составляющих шаблона
+	ls.hook.run('ls_template_init_end',[],window);	
 });
