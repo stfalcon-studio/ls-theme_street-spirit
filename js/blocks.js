@@ -68,11 +68,14 @@ ls.blocks = (function ($) {
 			ls.msg.error(null, result.sMsg);
 		} else {
 			content.html(result.sText);
-            if (obj && obj.id == 'block_stream_item_topic') {
-                $('.rss').attr('href', '/rss/new/');
-            } else if (obj && obj.id == 'block_stream_item_comment') {
-                $('.rss').attr('href', '/rss/allcomments/');
-            }
+			if(obj && obj.id){
+				if (obj.id == 'block_stream_item_topic') {
+	                $('.rss').attr('href', '/rss/new/');
+	            } else if (obj.id == 'block_stream_item_comment') {
+	                $('.rss').attr('href', '/rss/allcomments/');
+	            }
+			}
+            
 			ls.hook.run('ls_block_onload_html_after',[content,id,result],this);
 		}
 	};
