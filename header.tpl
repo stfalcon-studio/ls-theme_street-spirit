@@ -57,7 +57,7 @@
 </head>
 
 
-<body onload="prettyPrint()" class="ls-template-street-spirit">
+<body onload="prettyPrint()">
 	{hook run='body_begin'}
 	{include file='header_top.tpl'}
 	{include file='nav.tpl'}
