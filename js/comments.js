@@ -128,8 +128,8 @@ ls.comments = (function ($) {
 				if (aCmt.length > 0 && result.iMaxIdComment) { 
 					$("#comment_last_id").val(result.iMaxIdComment);
 					$('#count-comments').text(parseInt($('#count-comments').text())+aCmt.length);
-					if ($('#block_stream_item_comment').length && ls.blocks) {
-						ls.blocks.load($('#block_stream_item_comment'), 'block_stream');
+					if (ls.blocks) {
+						ls.blocks.load('#block_stream_item_comment', 'block_stream');
 					}
 				}
 				var iCountOld=0;

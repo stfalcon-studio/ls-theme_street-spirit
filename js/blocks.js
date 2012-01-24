@@ -34,6 +34,10 @@ ls.blocks = (function ($) {
 	*/
 	this.load = function(obj, block, params){
 		var id = $(obj).attr('id');
+		'*loadBefore*'; '*/loadBefore*';
+		
+		if(!id) return;
+		
 		params=$.extend(true,{},this.options.type[id].params || {},params || {});
 		
 		var content = $('#'+block+'_content');
@@ -43,7 +47,7 @@ ls.blocks = (function ($) {
 		$(obj).addClass(this.options.active);
 
 		ls.ajax(this.options.type[id].url, params, function(result){
-			this.onLoad(obj, content,id,result);
+			this.onLoad(content,id,result,obj);
 		}.bind(this));
 	};
 
@@ -57,18 +61,22 @@ ls.blocks = (function ($) {
 	/**
 	* Обработка результатов загрузки
 	*/
-	this.onLoad = function(obj, content,id,result) {
+	this.onLoad = function(content,id,result,obj) {
 		$(this).trigger('load',[content,id,result]);
 		content.empty();
 		if (result.bStateError) {
 			ls.msg.error(null, result.sMsg);
 		} else {
 			content.html(result.sText);
-            if (obj.id == 'block_stream_item_topic') {
-                $('.rss').attr('href', '/rss/new/');
-            } else if (obj.id == 'block_stream_item_comment') {
-                $('.rss').attr('href', '/rss/allcomments/');
-            }
+			if(obj && obj.id){
+				if (obj.id == 'block_stream_item_topic') {
+	                $('.rss').attr('href', '/rss/new/');
+	            } else if (obj.id == 'block_stream_item_comment') {
+	                $('.rss').attr('href', '/rss/allcomments/');
+	            }
+			}
+            
+			ls.hook.run('ls_block_onload_html_after',[content,id,result],this);
 		}
 	};
 
