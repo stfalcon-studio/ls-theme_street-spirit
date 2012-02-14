@@ -135,6 +135,7 @@
 .comment .info li a.favourite{display:block; width:17px; height:17px; background:url(../images/comments-sprite.png) -34px -31px no-repeat; margin-top:4px;}
 .comment .info li a.favourite:hover{background-position:-93px -31px;}
 .comment .info li a.favourite.active{background-position:-162px -31px;}
+.comment .info li a.favourite .favourite-count { float: left; margin-left: 20px; margin-top: -4px; }
 
 .comments.comment-list .comment { padding-left: 0; margin-bottom:0px;}
 

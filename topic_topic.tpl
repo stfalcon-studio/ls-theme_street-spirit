@@ -15,7 +15,9 @@
         {else}
         {$oTopic->getTitle()|escape:'html'}
         {/if}
-        <a href="#" onclick="return ls.favourite.toggle({$oTopic->getId()},this,'topic');" class="favourite {if $oUserCurrent && $oTopic->getIsFavourite()}active{/if}"></a>
+        <a href="#" onclick="return ls.favourite.toggle({$oTopic->getId()},this,'topic');" class="favourite {if $oUserCurrent && $oTopic->getIsFavourite()}active{/if}">
+            <span class="favourite-count" id="fav_count_topic_{$oTopic->getId()}">{if $oTopic->getCountFavourite()>0}{$oTopic->getCountFavourite()}{else}&nbsp;{/if}</span>
+        </a>
     </h1>
     {if $oUserCurrent and ($oUserCurrent->isAdministrator() or $oBlog->getUserIsAdministrator() or $oBlog->getOwnerId()==$oUserCurrent->getId() or $oUserCurrent->getId()==$oTopic->getUserId() or $oBlog->getUserIsModerator())}
     <div class="info-top">

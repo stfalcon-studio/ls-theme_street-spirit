@@ -12,7 +12,9 @@
 		{/if}
 		<a href="{router page='link'}go/{$oTopic->getId()}/" class="title-topic">{$oTopic->getTitle()|escape:'html'}</a>
 		<img src="{cfg name='path.static.skin'}/images/topic_link_big.gif" title="{$aLang.topic_link}" alt="{$aLang.topic_link}" />
-		<a href="#" onclick="return ls.favourite.toggle({$oTopic->getId()},this,'topic');" class="favourite {if $oUserCurrent && $oTopic->getIsFavourite()}active{/if}"></a>
+		<a href="#" onclick="return ls.favourite.toggle({$oTopic->getId()},this,'topic');" class="favourite {if $oUserCurrent && $oTopic->getIsFavourite()}active{/if}">
+            <span class="favourite-count" id="fav_count_topic_{$oTopic->getId()}">{if $oTopic->getCountFavourite()>0}{$oTopic->getCountFavourite()}{else}&nbsp;{/if}</span>
+		</a>
 	</h1>
 	<div class="topic-link-url"><span class="url"><a href="{router page='link'}go/{$oTopic->getId()}/" title="{$aLang.topic_link_count_jump}: {$oTopic->getLinkCountJump()}">{$oTopic->getLinkUrl(true)}</a></span></div>
     {if $oUserCurrent and ($oUserCurrent->isAdministrator() or $oBlog->getUserIsAdministrator() or $oBlog->getOwnerId()==$oUserCurrent->getId() or $oUserCurrent->getId()==$oTopic->getUserId() or $oBlog->getUserIsModerator())}
@@ -72,7 +74,7 @@
 				{/if}
 			</li>
 		{/if}
-        
+
         {assign var="bVoteAllow" value=1}
         {if ($oUserCurrent && $oTopic->getUserId()==$oUserCurrent->getId())
         || strtotime($oTopic->getDateAdd())<$smarty.now-$oConfig->GetValue('acl.vote.topic.limit_time')}
