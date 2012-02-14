@@ -5,7 +5,7 @@
 jQuery(document).ready(function($){
 	// Хук начала инициализации javascript-составляющих шаблона
 	ls.hook.run('ls_template_init_start',[],window);
-	
+
 	// Всплывающие окна
 	$('#login_form').jqm({trigger: '#login_form_show'});
 	$('#blog_delete_form').jqm({trigger: '#blog_delete_show'});
