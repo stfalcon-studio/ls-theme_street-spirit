@@ -78,7 +78,8 @@ if (jQuery.browser.flash) {
                 <input type="hidden" name="topic_id" value="{$_aRequest.topic_id}" />
             </p>
         </form>
-
+	
+	{hook run='add_topic_photoset_begin'}
 	<form action="" method="post" enctype="multipart/form-data">
 		{hook run='form_add_topic_photoset_begin'}
 
@@ -165,7 +166,7 @@ if (jQuery.browser.flash) {
 			<input type="submit" name="submit_topic_save" value="{$aLang.topic_create_submit_save}" />
 		</p>
 	</form>
-
+	{hook run='add_topic_photoset_end'}
 
 
 {include file='footer.tpl'}

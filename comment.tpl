@@ -26,7 +26,9 @@
 		{/if}
 		<li><a href="{if $oConfig->GetValue('module.comment.nested_per_page')}{router page='comments'}{else}#comment{/if}{$oComment->getId()}" class="comments-anchor"></a></li>
 		{if $oUserCurrent and !$bNoCommentFavourites}
-			<li><a href="#" onclick="return ls.favourite.toggle({$oComment->getId()},this,'comment');" class="comments-star{if $oComment->getIsFavourite()} active{/if}"></a></li>
+			<li><a href="#" onclick="return ls.favourite.toggle({$oComment->getId()},this,'comment');" class="favourite{if $oComment->getIsFavourite()} active{/if}">
+                <span class="favourite-count" id="fav_count_comment_{$oComment->getId()}">{if $oComment->getCountFavourite()>0}{$oComment->getCountFavourite()}{else}&nbsp;{/if}</span>
+			</a></li>
 		{/if}
 		{hook run='comment_action' comment=$oComment}
 	</ul>

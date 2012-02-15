@@ -17,8 +17,8 @@
 			&rarr;
 		</p>-->
 		<ul>
-			<li>{$aLang.paging}:</li>				
-			
+			<li>{$aLang.paging}:</li>
+
 			{if $aPaging.iCurrentPage>1}
 				<li><a href="{$aPaging.sBaseUrl}/{$aPaging.sGetParams}">&larr;</a></li>
 			{/if}
@@ -31,7 +31,7 @@
 			{/foreach}
 			{if $aPaging.iCurrentPage<$aPaging.iCountPage}
 				<li><a href="{$aPaging.sBaseUrl}/page{$aPaging.iCountPage}/{$aPaging.sGetParams}">{$aLang.paging_last}</a></li>
-			{/if}					
+			{/if}
 		</ul>
 	</div>
 {/if}
