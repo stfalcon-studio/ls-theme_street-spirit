@@ -30,10 +30,11 @@
 			<input type="text" name="title" id="form-image-title" value="" class="input-text input-width-full" /></p>
 			
 			{hook run="uploadimg_additional"}
-			
-			<button type="submit"  class="button button-primary" onclick="ls.ajaxUploadImg('block_upload_img_content_pc','{$sToLoad}');">{$aLang.uploadimg_submit}</button>
-			<button type="submit"  class="button jqmClose">{$aLang.uploadimg_cancel}</button>
-		</form>
+			<p>
+			    <button type="submit"  class="button button-primary" onclick="ls.ajaxUploadImg('block_upload_img_content_pc','{$sToLoad}');">{$aLang.uploadimg_submit}</button>
+			    <button type="submit"  class="button jqmClose">{$aLang.uploadimg_cancel}</button>
+            </p>
+        </form>
 		
 		
 		<form method="POST" action="" enctype="multipart/form-data" id="block_upload_img_content_link" onsubmit="return false;" style="display: none;" class="tab-content js-block-upload-img-content" data-type="link">
@@ -54,12 +55,13 @@
 				<input type="text" name="title" id="form-image-url-title" value="" class="input-text input-width-full" /></p>
 
 			{hook run="uploadimg_link_additional"}
-
-			<button type="submit"  class="button button-primary" onclick="ls.topic.insertImageToEditor(jQuery('#img_url').val(),jQuery('#form-image-url-align').val(),jQuery('#form-image-url-title').val());">{$aLang.uploadimg_link_submit_paste}</button>
-			{$aLang.or}
-			<button type="submit"  class="button button-primary" onclick="ls.ajaxUploadImg('block_upload_img_content_link','{$sToLoad}');">{$aLang.uploadimg_link_submit_load}</button>
-			<button type="submit"  class="button jqmClose">{$aLang.uploadimg_cancel}</button>
-		</form>
+            <p>
+                <button type="submit"  class="button button-primary" onclick="ls.topic.insertImageToEditor(jQuery('#img_url').val(),jQuery('#form-image-url-align').val(),jQuery('#form-image-url-title').val());">{$aLang.uploadimg_link_submit_paste}</button>
+                {$aLang.or}
+                <button type="submit"  class="button button-primary" onclick="ls.ajaxUploadImg('block_upload_img_content_link','{$sToLoad}');">{$aLang.uploadimg_link_submit_load}</button>
+                <button type="submit"  class="button jqmClose">{$aLang.uploadimg_cancel}</button>
+            </p>
+        </form>
 	</div>
 </div>
 	

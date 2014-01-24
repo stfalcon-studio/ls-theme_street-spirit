@@ -447,7 +447,7 @@ jQuery(document).ready(function($){
 		var menu 	= $('#dropdown-user-menu');
 		var pos 	= $('#dropdown-user').offset();
 
-		menu.appendTo('body').css({ 'left': pos.left, 'top': $('#dropdown-user').height() - 1 + 100, 'min-width': $('#dropdown-user').outerWidth(), 'display': 'none' });
+		menu.appendTo('body').css({ 'left': pos.left, 'top': $('#dropdown-user').height() - 1 + 100, 'display': 'none' });
 
 		trigger.click(function(){
 			menu.slideToggle();

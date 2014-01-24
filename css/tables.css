@@ -38,6 +38,7 @@
 .table.table-blogs tbody .cell-readers 	{ text-align: center; vertical-align: middle; font-size: 14px; font-weight: bold; }
 .table.table-blogs .cell-join 			{ width: 130px; text-align: center; vertical-align: middle; }
 .table.table-blogs .cell-join .read_blog			{ color: #0073a5; border: 0 none; background: none; padding: 2px 8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; }
+.table.table-blogs .cell-join .read_blog .icon-synio-join{ display: none; }
 .table.table-blogs .cell-join .read_blog:hover			{
 	background: #d8dbde;
 	background: -moz-linear-gradient(top,  #eaeced 0%, #d8dbde 100%);

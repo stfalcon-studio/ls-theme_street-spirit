@@ -1,4 +1,4 @@
-<div class="modal modal-write" id="modal_write">
+<div class="modal modal-write {if $iUserCurrentCountTopicDraft} with-draft {/if}" id="modal_write">
 	<header class="modal-header">
 		<a href="#" class="close jqmClose"></a>
 	</header>

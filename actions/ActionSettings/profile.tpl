@@ -199,7 +199,7 @@
 		{hook run='form_settings_profile_end'}
 		
 		
-		<button type="submit"  name="submit_profile_edit" class="button button-primary" />{$aLang.settings_profile_submit}</button>
+		<button type="submit"  name="submit_profile_edit" class="button button-primary in-line" />{$aLang.settings_profile_submit}</button>
 	</div>
 </form>
 

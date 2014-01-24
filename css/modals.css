@@ -28,7 +28,7 @@
 }
 .modal .close:hover { background-position: -131px -55px; }
 .modal .modal-header 		{ padding: 15px 30px 0; }
-.modal .modal-header h3 	{ font-size: 20px; font-weight: bold; margin-right: 20px; }
+.modal .modal-header h3 	{ font-size: 20px; font-weight: bold; margin-right: 20px; font-family: 'PT Sans',Arial,sans-serif;}
 .modal .modal-content 		{ padding: 30px 30px; }
 
 .jqmOverlay { background-color: #000; }
@@ -45,7 +45,7 @@
 .modal.modal-login .remember-label { font-size: 13px; /*color: #6c7272;*/ color: #000; font-family: arial; }
 .modal.modal-login .remember-label input { top: 2px; }
 .modal.modal-login .icon-question-sign { position: relative; top: -3px; }
-.modal.modal-login .icon-ok-green { position: relative; top: -1px; }
+.modal.modal-login .icon-ok-green { position: relative; top: -24px; left: 272px; display: block; }
 .modal.modal-login .js-block-popup-login-content .button { position: relative; top: -1px; margin-left: 1px; margin-right: 20px; padding-left: 15px; padding-right: 15px; -webkit-border-radius: 13px;
 -moz-border-radius: 13px;
 border-radius: 13px; }
@@ -54,7 +54,8 @@ border-radius: 13px; }
 
 
 /* Write */
-.modal.modal-write { width: 620px; margin-left: -310px; top: 70px; /*background: #e0eff9;*/ }
+.modal.modal-write { width: 464px; margin-left: -232px; top: 70px; }
+.modal.modal-write.with-draft { width: 620px; margin-left: -310px; }
 .modal.modal-write .modal-content { padding: 20px 10px 20px; *padding: 20px 10px 25px; }
 .modal.modal-write .write-list { *overflow: hidden; *zoom: 1; }
 .modal.modal-write .write-list li { width: 125px; margin: 0 10px 20px; font-size: 16px; font-family: 'PT Sans', sans-serif; text-align: center; overflow: hidden; display: inline-table; *float: left; }
@@ -81,6 +82,8 @@ border-radius: 13px; }
 .modal.modal-image-upload { width: 500px; margin-left: -250px; }
 .modal.modal-upload-photo .image-border, .modal.modal-upload-avatar .image-border { float: left; border-radius: 5px; background: #fff; padding: 5px; margin-bottom: 15px; -webkit-box-shadow: 0 0 5px rgba(0,0,0,.2); box-shadow: 0 0 5px rgba(0,0,0,.2); }
 #avatar-resize-original-img { max-width: 200px; width: 100%; }
+.modal.modal-upload-avatar .modal-content { padding-top: 5px; }
+.modal.modal-upload-avatar .image-border { margin-bottom: 8px; }
 
 
 

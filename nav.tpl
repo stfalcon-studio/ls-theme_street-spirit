@@ -11,6 +11,7 @@
 		
 		{if $oUserCurrent}
 			<div class="dropdown-user" id="dropdown-user">
+                {if $iUserCurrentCountTalkNew}<a href="{router page='talk'}" class="new-messages"><i class="icon-synio-new-message"></i>{$aLang.user_new_messages} <b>{$iUserCurrentCountTalkNew}</b></a>{/if}
 				<a href="{$oUserCurrent->getUserWebPath()}"><img src="{$oUserCurrent->getProfileAvatarPath(48)}" alt="avatar" class="avatar" /></a>
 				<a href="{$oUserCurrent->getUserWebPath()}" class="username">{$oUserCurrent->getLogin()}</a>
 				
@@ -47,8 +48,6 @@
 				<li><a href="{router page='registration'}" class="js-registration-form-show">{$aLang.registration_submit}</a></li>
 			</ul>
 		{/if}
-		
-		{if $iUserCurrentCountTalkNew}<a href="{router page='talk'}" class="new-messages">+{$iUserCurrentCountTalkNew} <i class="icon-synio-new-message"></i></a>{/if}
 
 	<!-- <nav id="nav"> -->
 		{if $menu}
