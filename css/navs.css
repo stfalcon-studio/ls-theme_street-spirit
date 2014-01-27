@@ -182,11 +182,10 @@
 
 /* Nav Profile */
 .nav.nav-profile 				{ margin-bottom: 15px; }
-.nav.nav-profile li 			{ float: none; font-size: 15px; font-family: arial; /*border-bottom: 1px dotted #dce1e6;*/ padding: 4px 10px 5px 10px; }
+.nav.nav-profile li 			{ float: none; font-size: 15px; font-family: arial; padding: 4px 0 5px; }
 .nav.nav-profile li a 			{ color: #0073a5; position: relative; }
 .nav.nav-profile li a sup		{ color: #0eca00; font-size: 12px; position: absolute; left: 100%; top: 5px; margin-left: 3px; }
 .nav.nav-profile li a:hover 	{ text-decoration: none; }
-.nav.nav-profile li.active 		{ padding-left: 4px; }
 .nav.nav-profile li.active a 	{ background: #f0f0f0; border-radius: 8px; padding: 1px 6px 2px; color: #000; text-decoration: none; }
 
 

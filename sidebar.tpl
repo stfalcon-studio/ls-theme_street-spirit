@@ -1,3 +1,3 @@
-<aside id="sidebar" {if $sidebarPosition == 'left'}class="sidebar-profile"{/if}>
+<aside id="sidebar" class="{if $sidebarPosition == 'left'}sidebar-profile{/if} {if $iUserCurrentCountTalkNew}new-messages{/if}">
 	{include file='blocks.tpl' group='right'}
 </aside>

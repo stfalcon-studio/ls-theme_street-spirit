@@ -39,18 +39,21 @@
 
 .block.block-type-stream .block-content .latest-list { }
 .block.block-type-stream .block-header h3, .block .block-header h3{ background: url(../images/profile_h2bg.png) 0 50% repeat-x, url(../images/content_bg.png) 0 -17px repeat-x; }
+.new-messages .block.block-type-stream .block-header h3, .new-messages .block .block-header h3{ background: url(../images/profile_h2bg.png) 0 50% repeat-x, url(../images/content_bg.png) 0 -48px repeat-x; }
 .block.block-type-stream .block-header h3 span.for_line, .block .block-header h3 span.for_line{ background: url(../images/content_bg.png) 0 -17px repeat-x; }
+.new-messages .block.block-type-stream .block-header h3 span.for_line, .new-messages  .block .block-header h3 span.for_line{ background-position:  0 -48px; }
 .block.block-type-blog .block-header h3 span.for_line{ background: none; }
 .block + .block .block-header h3{ background: url(../images/profile_h2bg.png) 0 50% repeat-x #fff; }
 .block + .block .block-header h3 span.for_line{ background: #fff; }
 .block.block-type-blog + .block.block-type-stream .block-header h3{ background: #fff; }
 .block.block-type-stream .block-header .block-update{ background: url(../images/icons-synio.png) -61px -200px no-repeat, url(../images/content_bg.png) 0 -27px #fff repeat-x; }
 .block.block-type-stream .block-header .block-update:after{ background: url(../images/content_bg.png) 0 -27px #fff repeat-x; }
+.new-messages .block.block-type-stream .block-header .block-update:after{ background-position: 0 -48px; }
 .block.block-type-blog + .block.block-type-stream .block-header .block-update{ background: url(../images/icons-synio.png) -61px -200px transparent no-repeat #fff; }
 .block.block-type-blog + .block.block-type-stream .block-header .block-update:after{ background: #fff; }
 .block.block-type-stream .block-content .latest-list li { margin-bottom: 15px; /*color: #818189;*/ color: #4d4d4d; position: relative; padding-left: 30px; overflow: hidden; }
 .block.block-type-stream .block-content .latest-list li .avatar { position: absolute; left: 0; top: 0; }
-.block.block-type-stream .block-content .latest-list p { font-size: 11px !important; margin-top: -5px; font-family: arial; }
+.block.block-type-stream .block-content .latest-list p { font-size: 11px !important; margin-top: -4px; font-family: arial; }
 .block.block-type-stream .block-content .latest-list .stream-topic { text-decoration: underline; font-size: 15px; font-weight: bold; font-family: 'PT Sans'; }
 .block.block-type-stream .block-content .latest-list .stream-blog { color: #0073a5; font-size: 15px; font-weight: bold; }
 .block.block-type-stream .block-content .latest-list .stream-blog:hover { }
