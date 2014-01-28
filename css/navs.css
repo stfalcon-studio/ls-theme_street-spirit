@@ -30,8 +30,12 @@
 .modal .nav.nav-pills li a:hover 	{ border: 0 none; }
 .modal .nav.nav-pills li.active a 	{ border: 0 none; }
 .nav.nav-pills li a.new		{ margin-left: 2px; margin-top: -4px; text-decoration: none; color: #0eca00; display: inline-block; *display: inline; zoom: 1; font-size: 9px; }
-.nav.nav-pills li.active 	{ /*border-color: #ebf0f4;*/ background: #e6e1d1; }
-.nav.nav-pills li.active a 	{ color: #333; text-decoration: none; font-weight: bold; /*border-color: #ebf0f4;*/ }
+.nav.nav-pills li.active 	{ background: #e6e1d1; }
+.nav.nav-pills li.active a 	{ color: #333; text-decoration: none; font-weight: bold; }
+
+.content-profile .nav.nav-pills li.active { padding: 0; margin-right: 5px; background: transparent; }
+.content-profile .nav.nav-pills li.active a sup { position: static; vertical-align: text-top; margin-left: 0; }
+.content-profile .nav.nav-pills li.active a span { display: inline-block; border-radius: 8px; line-height: 13px;  padding: 2px 6px 1px; background: #E6E1D1; }
 
 .nav.nav-pills.nav-pills-profile 		{ margin-bottom: 30px; }
 
